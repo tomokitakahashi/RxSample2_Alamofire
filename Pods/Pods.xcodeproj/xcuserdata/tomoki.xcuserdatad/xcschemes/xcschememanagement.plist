@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ObjectMapper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-RxSample2_Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,17 +42,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0D91DD4D3119DF9BBBD87A2C34DBA7E2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>0DC95F08235476F42A613D2A994B3EF3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>130DD5062E79EF4E2D889CF1670EE2EA</key>
+		<key>4320711FB6E80E6038582DFBBBDAD97A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5AD85B4959C4B84FB12EA586614CCBDD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>80284E172B9876860D8270A4637EAD32</key>
+		<key>B04B7FAAEC0A9CD9116162B56B50C84D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B04B7FAAEC0A9CD9116162B56B50C84D</key>
+		<key>D5D6200D4BE741574DBD4FB768A6F55B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E14FFFAA320B475D6814E3E01AFF0673</key>
 		<dict>
 			<key>primary</key>
 			<true/>

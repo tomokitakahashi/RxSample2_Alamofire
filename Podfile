@@ -8,7 +8,7 @@ target 'RxSample2_Alamofire' do
   pod 'Alamofire'
   pod 'RxSwift'
   pod 'RxCocoa'
-
+  pod 'ObjectMapper'
 
   target 'RxSample2_AlamofireTests' do
     inherit! :search_paths
