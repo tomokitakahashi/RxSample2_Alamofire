@@ -15,6 +15,15 @@
 		550BF9191D85A72F00727486 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 550BF9171D85A72F00727486 /* LaunchScreen.storyboard */; };
 		550BF9241D85A72F00727486 /* RxSample2_AlamofireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BF9231D85A72F00727486 /* RxSample2_AlamofireTests.swift */; };
 		550BF92F1D85A72F00727486 /* RxSample2_AlamofireUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BF92E1D85A72F00727486 /* RxSample2_AlamofireUITests.swift */; };
+		550BF9401D85AB8600727486 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BF93F1D85AB8600727486 /* ViewModel.swift */; };
+		550BF9421D85AB8F00727486 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BF9411D85AB8F00727486 /* ResponseModel.swift */; };
+		550BF9451D85AD0F00727486 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BF9441D85AD0F00727486 /* Api.swift */; };
+		55241D301D868E1F00017C68 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55241D2F1D868E1F00017C68 /* Config.swift */; };
+		55241D321D868FFD00017C68 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55241D311D868FFD00017C68 /* Router.swift */; };
+		55241D341D869B2500017C68 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55241D331D869B2500017C68 /* Feed.swift */; };
+		55241D361D86A0EC00017C68 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55241D351D86A0EC00017C68 /* Entry.swift */; };
+		55241D381D86A66C00017C68 /* ResponseBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55241D371D86A66C00017C68 /* ResponseBase.swift */; };
+		55241D3A1D86A8B200017C68 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55241D391D86A8B200017C68 /* Category.swift */; };
 		97B1C6B9B4FA76027945EFBD /* Pods_RxSample2_AlamofireTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC6D03F118A17BB12ECA7265 /* Pods_RxSample2_AlamofireTests.framework */; };
 		F4F42B60E6B7B864211B63BD /* Pods_RxSample2_AlamofireUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2785BD86547F01687C2F40A9 /* Pods_RxSample2_AlamofireUITests.framework */; };
 		FCEAE7A4FD1035402B409AD6 /* Pods_RxSample2_Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61D95BF5D79A7AB0595A2C8 /* Pods_RxSample2_Alamofire.framework */; };
@@ -55,6 +64,15 @@
 		550BF92A1D85A72F00727486 /* RxSample2_AlamofireUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxSample2_AlamofireUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		550BF92E1D85A72F00727486 /* RxSample2_AlamofireUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSample2_AlamofireUITests.swift; sourceTree = "<group>"; };
 		550BF9301D85A72F00727486 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		550BF93F1D85AB8600727486 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		550BF9411D85AB8F00727486 /* ResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		550BF9441D85AD0F00727486 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		55241D2F1D868E1F00017C68 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		55241D311D868FFD00017C68 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		55241D331D869B2500017C68 /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		55241D351D86A0EC00017C68 /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		55241D371D86A66C00017C68 /* ResponseBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseBase.swift; sourceTree = "<group>"; };
+		55241D391D86A8B200017C68 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		60804995E3F2CE73236A153D /* Pods-RxSample2_Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSample2_Alamofire.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSample2_Alamofire/Pods-RxSample2_Alamofire.release.xcconfig"; sourceTree = "<group>"; };
 		81555DD879EA0CC2A47E0E6D /* Pods-RxSample2_Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSample2_Alamofire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSample2_Alamofire/Pods-RxSample2_Alamofire.debug.xcconfig"; sourceTree = "<group>"; };
 		CC6D03F118A17BB12ECA7265 /* Pods_RxSample2_AlamofireTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSample2_AlamofireTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,8 +148,9 @@
 			isa = PBXGroup;
 			children = (
 				550BF90B1D85A72E00727486 /* AppDelegate.swift */,
-				550BF90D1D85A72E00727486 /* ViewController.swift */,
-				550BF90F1D85A72F00727486 /* Main.storyboard */,
+				550BF93C1D85AAC900727486 /* View */,
+				550BF93D1D85AAD300727486 /* ViewModel */,
+				550BF93E1D85AAE700727486 /* Model */,
 				550BF9151D85A72F00727486 /* Assets.xcassets */,
 				550BF9171D85A72F00727486 /* LaunchScreen.storyboard */,
 				550BF91A1D85A72F00727486 /* Info.plist */,
@@ -156,6 +175,46 @@
 				550BF9301D85A72F00727486 /* Info.plist */,
 			);
 			path = RxSample2_AlamofireUITests;
+			sourceTree = "<group>";
+		};
+		550BF93C1D85AAC900727486 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				550BF90F1D85A72F00727486 /* Main.storyboard */,
+				550BF90D1D85A72E00727486 /* ViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		550BF93D1D85AAD300727486 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				550BF93F1D85AB8600727486 /* ViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		550BF93E1D85AAE700727486 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				550BF9411D85AB8F00727486 /* ResponseModel.swift */,
+				55241D331D869B2500017C68 /* Feed.swift */,
+				55241D351D86A0EC00017C68 /* Entry.swift */,
+				55241D391D86A8B200017C68 /* Category.swift */,
+				55241D371D86A66C00017C68 /* ResponseBase.swift */,
+				550BF9431D85ACB500727486 /* Api */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		550BF9431D85ACB500727486 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				550BF9441D85AD0F00727486 /* Api.swift */,
+				55241D311D868FFD00017C68 /* Router.swift */,
+				55241D2F1D868E1F00017C68 /* Config.swift */,
+			);
+			name = Api;
 			sourceTree = "<group>";
 		};
 		7D64F3BB88CF11CFC827B74A /* Frameworks */ = {
@@ -446,9 +505,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55241D361D86A0EC00017C68 /* Entry.swift in Sources */,
+				55241D321D868FFD00017C68 /* Router.swift in Sources */,
+				55241D341D869B2500017C68 /* Feed.swift in Sources */,
+				550BF9451D85AD0F00727486 /* Api.swift in Sources */,
+				550BF9421D85AB8F00727486 /* ResponseModel.swift in Sources */,
+				55241D381D86A66C00017C68 /* ResponseBase.swift in Sources */,
 				550BF9141D85A72F00727486 /* RxSample2_Alamofire.xcdatamodeld in Sources */,
+				55241D301D868E1F00017C68 /* Config.swift in Sources */,
 				550BF90E1D85A72E00727486 /* ViewController.swift in Sources */,
+				550BF9401D85AB8600727486 /* ViewModel.swift in Sources */,
 				550BF90C1D85A72E00727486 /* AppDelegate.swift in Sources */,
+				55241D3A1D86A8B200017C68 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

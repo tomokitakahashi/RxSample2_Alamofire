@@ -7,17 +7,48 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    let viewModel = ViewModel()
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        setViewModel()
+        binding()
+    }
+    
+    func setViewModel(){
+        tableView.dataSource = viewModel
+        
+        viewModel.reloadData()
+    }
+    
+    func binding(){
+        viewModel.entries.asObservable().filter { data in
+            return !data.isEmpty
+            }.subscribe(onNext: { [unowned self] data in
+                
+                self.tableView.reloadData()
+                }, onError: { error in
+                    
+                }, onCompleted: {
+                    
+            }) { () in
+                
+        }.addDisposableTo(disposeBag)
     }
 
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
     }
 
 
