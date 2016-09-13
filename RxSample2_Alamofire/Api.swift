@@ -25,12 +25,12 @@ enum ApiMethod : String{
     case DELETE = "DELETE"
     case PUT = "PUT"
     
-    var alamofireMethod : Alamofire.Method {
+    var alamofireMethod : Alamofire.Method? {
         switch self {
         case .GET:
             return Alamofire.Method.GET
         default:
-            return Alamofire.Method.DELETE
+            return nil
         }
     }
 }
@@ -46,8 +46,7 @@ class Api {
     private var requestUrl : Request {
         let path = router.path
         print("path      :\(path)")
-        let request = manager.request(method.alamofireMethod, router.baseUrl + path, parameters: nil, encoding: .JSON, headers: nil)
-        return request
+        return manager.request(method.alamofireMethod!, router.baseUrl + path, parameters: nil, encoding: .JSON, headers: nil)
     }
     
     private init(router : ApiRouter ,method : ApiMethod){
@@ -67,9 +66,6 @@ class Api {
     
     
     func request() -> Observable<ResponseModel>{
-        print("aaaaaaaaa")
-        print(parameters)
-        print(requestUrl)
         
         let observable : Observable<ResponseModel> = Observable.create{ (observer : AnyObserver<ResponseModel>) in
             self.requestUrl.validate().responseJSON(completionHandler : { response in
