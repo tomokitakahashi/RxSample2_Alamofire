@@ -10,7 +10,7 @@ import ObjectMapper
 
 class ResponseModel: ResponseBase {
     
-    private(set) var responseFeed : Feed!
+    fileprivate(set) var responseFeed : Feed!
     
     override func mapping(map : Map){
         responseFeed <- map["responseData.feed"]

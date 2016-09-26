@@ -10,9 +10,14 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+
 class ViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var ResTableView: UITableView!
+    
+  
+    
+//    private lazy var hakuba : Hakuba = Hakuba(tableView: self.ResTableView)
     
     let viewModel = ViewModel()
     let disposeBag = DisposeBag()
@@ -20,37 +25,59 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setViewModel()
-        binding()
+
+        bind()
+
+    }
+    
+    
+    func bind(){
+        viewModel.entries.asObservable().filter{ x in
+                return !x.isEmpty
+            }
+            .subscribe(onNext: { [unowned self]data in
+                self.ResTableView.reloadData()
+                
+                }, onError: { data in
+                    
+                }, onCompleted: { () in
+                    
+                }){ () in
+                    
+            }.addDisposableTo(disposeBag)
+        
     }
     
     func setViewModel(){
-        tableView.dataSource = viewModel
+        ResTableView.dataSource = viewModel
         
         viewModel.reloadData()
     }
     
-    func binding(){
-        viewModel.entries.asObservable().filter { data in
-            return !data.isEmpty
-            }.subscribe(onNext: { [unowned self] data in
-                
-                self.tableView.reloadData()
-                }, onError: { error in
-                    
-                }, onCompleted: {
-                    
-            }) { () in
-                
-        }.addDisposableTo(disposeBag)
-    }
 
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
     }
 
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

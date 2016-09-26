@@ -10,12 +10,12 @@ import UIKit
 import ObjectMapper
 
 class Feed : ResponseBase {
-    private(set) var title : String!
-    private(set) var feedUrl : NSURL!
-    private(set) var author :String!
-    private(set) var type : String!
-    private(set) var description : String?
-    private(set) var entries : [Entry]!
+    fileprivate(set) var title : String!
+    fileprivate(set) var feedUrl : URL!
+    fileprivate(set) var author :String!
+    fileprivate(set) var type : String!
+    fileprivate(set) var description : String?
+    fileprivate(set) var entries : [Entry]!
     
     override func mapping(map : Map){
         title <- map["title"]

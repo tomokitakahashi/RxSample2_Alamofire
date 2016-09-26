@@ -25,12 +25,12 @@ enum ApiMethod : String{
     case DELETE = "DELETE"
     case PUT = "PUT"
     
-    var alamofireMethod : Alamofire.Method {
+    var alamofireMethod : HTTPMethod {
         switch self {
         case .GET:
-            return Alamofire.Method.GET
+            return HTTPMethod.get
         default:
-            return Alamofire.Method.DELETE
+            return HTTPMethod.connect
         }
     }
 }
@@ -38,28 +38,33 @@ enum ApiMethod : String{
 class Api {
     
     
-    private let manager = Alamofire.Manager()
+    private let manager = SessionManager()
 
     private var router : ApiRouter
-    private var parameters : [String : AnyObject]?
-    private var method : ApiMethod
-    private var requestUrl : Request {
-        let path = router.path
-        print("path      :\(path)")
-        let request = manager.request(method.alamofireMethod, router.baseUrl + path, parameters: nil, encoding: .JSON, headers: nil)
-        return request
+    private var parameters : [String : Any]?
+    private var anyMethod : ApiMethod!
+    var requestUrl : DataRequest {
+
+      //  print("path :\(path)")
+        let req = URL(string: (router.baseUrl+router.path))
+        
+        return manager.request(req!)
+        
+        
+//        return manager.request(req,method: method.alamofireMethod!, parameters: nil, encoding: .JSON, headers: nil)
+        //.request(method.alamofireMethod!, router.baseUrl + path, parameters: nil, encoding: .JSON, headers: nil)
     }
     
-    private init(router : ApiRouter ,method : ApiMethod){
+    fileprivate init(router : ApiRouter ,method : ApiMethod){
         self.router = router
-        self.method = method
+        self.anyMethod = method
     }
     
-    static func createInstance(router : ApiRouter,method : ApiMethod) -> Api{
+    static func createInstance(_ router : ApiRouter,method : ApiMethod) -> Api{
         return Api(router: router, method: method)
     }
     
-    func setParameters(parameters : [String : AnyObject]) -> Self{
+    func setParameters(_ parameters : [String : AnyObject]) -> Self{
         self.parameters = parameters
         return self
     }
@@ -67,26 +72,23 @@ class Api {
     
     
     func request() -> Observable<ResponseModel>{
-        print("aaaaaaaaa")
-        print(parameters)
-        print(requestUrl)
         
         let observable : Observable<ResponseModel> = Observable.create{ (observer : AnyObserver<ResponseModel>) in
             self.requestUrl.validate().responseJSON(completionHandler : { response in
                 print("eeee")
                 print(self.requestUrl)
                 switch response.result {
-                case .Success(let value) :
-                    guard let object = Mapper<ResponseModel>().map(value) else {
+                case .success(let value) :
+                    guard let object = Mapper<ResponseModel>().map(JSONObject: value) else {
                         return observer.onCompleted()  //when value parse to object is missed
                     }
                     observer.onNext(object)  // object type is 'ResponseModel'
                     observer.onCompleted()
-                case .Failure(let error) :
+                case .failure(let error) :
                     observer.onError(error)
                 }
             })
-            return AnonymousDisposable {
+            return Disposables.create {
                 
             }
         
