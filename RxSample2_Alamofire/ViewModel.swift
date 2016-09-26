@@ -10,21 +10,20 @@ import UIKit
 import RxSwift
 
 
-class ViewModel : NSObject , UITableViewDataSource {
+class ViewModel : NSObject , UITableViewDataSource{
     
-    private var router = Api.Router()
+    fileprivate var router = Api.Router()
     
     //Variableは監視対象のオブジェクトを指す(ジェネリクス型) => Variable<[Entry]>の'<>'で型を指定する
-    private(set) var entries : Variable<[Entry]> = Variable([])
-    private(set) var feed : Variable<Feed?> = Variable(nil)
-    private(set) var error : Variable<NSError?> = Variable(nil)
-    
-    
+    fileprivate(set) var entries : Variable<[Entry]> = Variable([])
+    fileprivate(set) var feed : Variable<Feed?> = Variable(nil)
+    fileprivate(set) var error : Variable<NSError?> = Variable(nil)
     
     func reloadData(){
         router.getJson()
             .subscribe(onNext: { [weak self] data in
                 self?.entries.value = data.responseFeed.entries
+                self?.feed.value = data.responseFeed
             }, onError: { error in
                 print("subscribe error code :\(error)")
                 self.error.value = error as NSError
@@ -35,11 +34,12 @@ class ViewModel : NSObject , UITableViewDataSource {
     }
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(self.entries.value.count)
         return self.entries.value.count
     }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .Default, reuseIdentifier: "cell")
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         cell.textLabel?.text = entries.value[indexPath.row].title
         return cell
     }

@@ -10,12 +10,12 @@ import ObjectMapper
 
 
 class Entry : ResponseBase {
-    private(set) var title : String!
-    private(set) var link : NSURL!
-    private(set) var author : String!
-    private(set) var publishedDate : NSDate!
-    private(set) var content : String!
-    private(set) var category: String!
+    fileprivate(set) var title : String!
+    fileprivate(set) var link : URL!
+    fileprivate(set) var author : String!
+    fileprivate(set) var publishedDate : Date!
+    fileprivate(set) var content : String!
+    fileprivate(set) var category: String!
     
     override func mapping(map: Map) {
         title <- map["title"]

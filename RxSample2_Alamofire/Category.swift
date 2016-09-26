@@ -9,7 +9,7 @@
 import ObjectMapper
 
 class Category: ResponseBase {
-    private(set) var category : String!
+    fileprivate(set) var category : String!
     
     override func mapping(map: Map) {
       //  category <- map[]
